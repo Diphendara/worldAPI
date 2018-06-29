@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Country</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Code</th>
+                <td>{{ country.code }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ country.name }}</td>
+            </tr>
+            <tr>
+                <th>Region</th>
+                <td>{{ country.region }}</td>
+            </tr>
+            <tr>
+                <th>Surfacearea</th>
+                <td>{{ country.surfacearea }}</td>
+            </tr>
+            <tr>
+                <th>Indepyear</th>
+                <td>{{ country.indepyear }}</td>
+            </tr>
+            <tr>
+                <th>Population</th>
+                <td>{{ country.population }}</td>
+            </tr>
+            <tr>
+                <th>Lifeexpectancy</th>
+                <td>{{ country.lifeexpectancy }}</td>
+            </tr>
+            <tr>
+                <th>Gnp</th>
+                <td>{{ country.gnp }}</td>
+            </tr>
+            <tr>
+                <th>Gnpold</th>
+                <td>{{ country.gnpold }}</td>
+            </tr>
+            <tr>
+                <th>Localname</th>
+                <td>{{ country.localname }}</td>
+            </tr>
+            <tr>
+                <th>Governmentform</th>
+                <td>{{ country.governmentform }}</td>
+            </tr>
+            <tr>
+                <th>Headofstate</th>
+                <td>{{ country.headofstate }}</td>
+            </tr>
+            <tr>
+                <th>Capital</th>
+                <td>{{ country.capital }}</td>
+            </tr>
+            <tr>
+                <th>Code2</th>
+                <td>{{ country.code2 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('country_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('country_edit', { 'code': country.code }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

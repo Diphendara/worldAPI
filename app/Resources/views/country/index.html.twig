@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Countries list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Region</th>
+                <th>Surfacearea</th>
+                <th>Indepyear</th>
+                <th>Population</th>
+                <th>Lifeexpectancy</th>
+                <th>Gnp</th>
+                <th>Gnpold</th>
+                <th>Localname</th>
+                <th>Governmentform</th>
+                <th>Headofstate</th>
+                <th>Capital</th>
+                <th>Code2</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for country in countries %}
+            <tr>
+                <td><a href="{{ path('country_show', { 'code': country.code }) }}">{{ country.code }}</a></td>
+                <td>{{ country.name }}</td>
+                <td>{{ country.region }}</td>
+                <td>{{ country.surfacearea }}</td>
+                <td>{{ country.indepyear }}</td>
+                <td>{{ country.population }}</td>
+                <td>{{ country.lifeexpectancy }}</td>
+                <td>{{ country.gnp }}</td>
+                <td>{{ country.gnpold }}</td>
+                <td>{{ country.localname }}</td>
+                <td>{{ country.governmentform }}</td>
+                <td>{{ country.headofstate }}</td>
+                <td>{{ country.capital }}</td>
+                <td>{{ country.code2 }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('country_show', { 'code': country.code }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('country_edit', { 'code': country.code }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('country_new') }}">Create a new country</a>
+        </li>
+    </ul>
+{% endblock %}

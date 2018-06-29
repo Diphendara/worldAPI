@@ -1,0 +1,8 @@
+world_api:
+    resource: "@worldAPIBundle/Controller/"
+    type:     annotation
+    prefix:   /world
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
